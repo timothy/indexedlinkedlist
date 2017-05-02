@@ -25,31 +25,17 @@ public class IndexedLinkedList {
         
         // insert integers in list
         list.insertAtFront("Tim");
-        list.print('T');
+        list.insertAtFront("Tom");
+        list.insertAtFront("T-loc");
         list.insertAtFront("Bob");
-        list.print('b');
         list.insertAtBack("Jim");
-        list.print('J');
         list.insertAtBack("Kat");
         list.print('k');
 
         // remove objects from list; print after each removal
         try {
-            String removedItem = list.removeFromFront('t');
-            System.out.println("removed " + removedItem);
-            list.print('t');
-
-            removedItem = list.removeFromFront('b');
-           System.out.println("removed " + removedItem);
-            list.print('b');
-
-            removedItem = list.removeFromBack('j');
-            System.out.println("removed " + removedItem);
-            list.print('j');
-
-            removedItem = list.removeFromBack('k');
-            System.out.println("removed " + removedItem);
-            list.print('k');
+         
+            System.out.println(list.search("Tom"));
         } catch (EmptyListException emptyListException) {
             emptyListException.printStackTrace();
         } catch (NullPointerException n){

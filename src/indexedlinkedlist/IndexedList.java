@@ -215,7 +215,7 @@ public class IndexedList<T> {
 
         // while not at end of list, output current node's data
         while (current != null) {
-            if (current == value) {
+            if (current.data == value) {
                 return current.data;
             }
             current = current.nextNode;
