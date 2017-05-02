@@ -9,7 +9,7 @@ package indexedlinkedlist;
  *
  * @author ^_^
  */
-public class List<T> {
+public class IndexedList<T> {
 
     private ListNode<T>[] firstNode = new ListNode[27];
     private ListNode<T>[] lastNode = new ListNode[27];
@@ -21,7 +21,7 @@ public class List<T> {
     /**
      * constructor creates empty List with "list" as the name
      */
-    public List() {
+    public IndexedList() {
         this("list");
     }
 
@@ -30,7 +30,7 @@ public class List<T> {
      *
      * @param listName
      */
-    public List(String listName) {
+    public IndexedList(String listName) {
         name = listName;
     }
 
@@ -206,5 +206,20 @@ public class List<T> {
      */
     private char stringIndex(int c) {
         return this.alphabet.charAt(c);
+    }
+
+    public T search(T value) {
+        int i = stringIndex(value.toString().charAt(0));
+
+        ListNode<T> current = firstNode[i];
+
+        // while not at end of list, output current node's data
+        while (current != null) {
+            if (current == value) {
+                return current.data;
+            }
+            current = current.nextNode;
+        }
+        return null;
     }
 } // end class List<T>

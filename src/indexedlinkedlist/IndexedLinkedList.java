@@ -17,7 +17,7 @@ public class IndexedLinkedList {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<String> list = new List<>();
+        IndexedList<String> list = new IndexedList<>();
 
         for (int i = 0; i < 10; i++) {
             list.insertAtFront("a");
